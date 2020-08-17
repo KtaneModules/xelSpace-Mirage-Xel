@@ -101,6 +101,6 @@ public class xelSpace : MonoBehaviour {
         module.HandlePass();
         solved = true;
         sound.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.CorrectChime, transform);
-        Debug.LogFormat("[Space #{0}] Module solved.", moduleId, currentChar + 1);
+        Debug.LogFormat("[Space #{0}] Module solved.", moduleId);
     }
 }

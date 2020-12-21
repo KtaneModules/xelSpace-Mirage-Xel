@@ -63,7 +63,7 @@ public class xelSpace : MonoBehaviour {
         }
 	}
 
-    IEnumerator handleSpacePress()
+     IEnumerator handleSpacePress()
     {
         int currentChar = 0;
         while (currentChar < usedQuote.Length)
@@ -82,6 +82,7 @@ public class xelSpace : MonoBehaviour {
                     StopCoroutine(handleSpacePress());
                     inputting = false;
                     Debug.LogFormat("[Space #{0}] Character {1} was a space, but the space bar was not pressed. Strike!", moduleId, currentChar+1);
+                    StopAllCoroutines();
                     yield break;
                 }
 
@@ -92,6 +93,7 @@ public class xelSpace : MonoBehaviour {
                 StopCoroutine(handleSpacePress());
                 inputting = false;
                 Debug.LogFormat("[Space #{0}] Character {1} was not a space, but the space bar was pressed. Strike!", moduleId, currentChar+1);
+                StopAllCoroutines();
                 yield break;
             }
 
